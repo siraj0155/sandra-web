@@ -56,7 +56,6 @@ export default function Home() {
                   alt={profile.photoAlt}
                   fill
                   priority
-                  sizes="(min-width: 1024px) 380px, 280px"
                 />
               </div>
               <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.2em] text-mist">

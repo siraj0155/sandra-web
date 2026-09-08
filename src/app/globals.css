@@ -407,6 +407,13 @@ body {
   color: var(--paper);
 }
 
+@media (min-width: 1024px) {
+  .hamburger,
+  .mobile-nav {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .orb-a,
   .orb-b,

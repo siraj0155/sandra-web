@@ -7,7 +7,7 @@ export const profile = {
   availability: "Hello",
   greeting: "Hi, I’m Sandra.",
   headline: "This is my personal site.",
-  photo: "/portrait.jpg",
+  photo: "/sandu.jpeg",
   photoAlt: "Portrait of Sandra",
   resumeUrl: "/resume.pdf",
   github: "https://github.com",

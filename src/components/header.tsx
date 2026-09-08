@@ -1,10 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { nav, profile } from "@/data/portfolio";
+
+const desktopQuery = "(min-width: 1024px)";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia(desktopQuery);
+
+    function closeOnDesktop() {
+      if (media.matches) {
+        setOpen(false);
+      }
+    }
+
+    closeOnDesktop();
+    media.addEventListener("change", closeOnDesktop);
+    return () => media.removeEventListener("change", closeOnDesktop);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 border-b border-line/70 bg-ink/70 backdrop-blur-xl">
@@ -16,7 +32,7 @@ export function Header() {
           <span className="font-mono text-[13px] tracking-wide text-mist">{profile.name}</span>
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
           {nav.map((item) => (
             <a
               key={item.href}
@@ -30,7 +46,7 @@ export function Header() {
 
         <button
           type="button"
-          className={`hamburger md:hidden${open ? " is-open" : ""}`}
+          className={`hamburger${open ? " is-open" : ""}`}
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((value) => !value)}
@@ -46,7 +62,7 @@ export function Header() {
 
       <nav
         id="mobile-nav"
-        className={`mobile-nav md:hidden${open ? " is-open" : ""}`}
+        className={`mobile-nav${open ? " is-open" : ""}`}
         aria-label="Mobile"
         aria-hidden={!open}
       >
