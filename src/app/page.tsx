@@ -187,7 +187,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="stage stage-cream border-b border-line">
+      {/* <section className="stage stage-cream border-b border-line">
         <Atmosphere />
         <div className="relative mx-auto max-w-6xl px-5 py-24 sm:px-8">
           <Eyebrow>05 — Certificates</Eyebrow>
@@ -207,7 +207,7 @@ export default function Home() {
             ))}
           </ul>
         </div>
-      </section>
+      </section> */}
 
       <section id="contact" className="stage stage-wash border-b border-line">
         <Atmosphere />
